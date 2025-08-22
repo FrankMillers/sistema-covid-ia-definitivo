@@ -1,0 +1,33 @@
+# Datasets grandes
+datos/raw/*.zip
+datos/raw/*.tar.gz
+datos/processed/*.csv
+
+# Modelos entrenados grandes
+modelos/entrenados/*.h5
+modelos/checkpoints/
+
+# Cache Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Entorno virtual
+venv/
+env/
+.env
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Sistema
+.DS_Store
+Thumbs.db
+
+# Logs
+logs/
+*.log
+
+# Archivos temporales
+temp/
+tmp/

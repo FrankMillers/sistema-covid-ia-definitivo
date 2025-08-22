@@ -1,0 +1,11 @@
+idiomas_soportados:
+  - es
+  - en  
+  - fr
+
+idioma_por_defecto: es
+
+rutas_traduccion:
+  es: "traducciones/es.json"
+  en: "traducciones/en.json"
+  fr: "traducciones/fr.json"
