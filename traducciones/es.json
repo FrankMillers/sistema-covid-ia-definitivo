@@ -1,1 +1,442 @@
-{}
+{
+  "idioma": "🌍 Idioma",
+  "seleccionar_idioma": "Seleccionar idioma de la aplicación",
+  
+  "titulo_principal": "🦠 Sistema de Inteligencia Artificial para la Detección Automatizada de COVID-19 en Radiografías de Tórax",
+  "subtitulo": "Análisis Inteligente de Radiografías con Deep Learning",
+  "configuracion_modelo": "⚙️ Configuración del Modelo",
+  "seleccionar_modelo": "Seleccionar Modelo IA:",
+  "ayuda_modelo": "Elige el modelo de inteligencia artificial para el análisis",
+  "metricas": "📊 Métricas de Rendimiento:",
+  "accuracy": "Precisión",
+  "cargando_modelo": "🔄 Cargando modelo",
+  "modelo_cargado": "cargado correctamente con",
+  "modelo_no_encontrado": "Modelo no encontrado",
+  "error_carga_modelo": "Error cargando modelo",
+  
+  "analisis_radiografia": "📋 Análisis de Radiografía",
+  "subir_radiografia": "📤 Subir Radiografía para Análisis:",
+  "formatos_soportados": "Formatos soportados: PNG, JPG, JPEG",
+  "imagen_original": "🔍 Imagen Original",
+  "archivo": "Archivo",
+  "informacion_imagen": "ℹ️ Información de la Imagen",
+  "dimensiones": "Dimensiones",
+  "formato": "Formato",
+  "modo": "Modo de Color",
+  "analisis_modelo": "🤖 Análisis del Modelo",
+  "analizar_radiografia": "🔬 Analizar Radiografía",
+  "analizando": "🔄 Analizando imagen...",
+  
+  "detectado": "DETECTADO",
+  "resultado": "RESULTADO",
+  "confianza": "Confianza",
+  "prediccion_principal": "⭐ Predicción Principal",
+  "probabilidades_detalladas": "📊 Probabilidades Detalladas",
+  "distribucion_probabilidades": "📈 Distribución de Probabilidades",
+  
+  "covid19": "COVID-19",
+  "opacidad_pulmonar": "Opacidad Pulmonar",
+  "normal": "Normal",
+  "neumonia_viral": "Neumonía Viral",
+  
+  "error_procesamiento": "Error procesando imagen con modelo",
+  
+  "recomendaciones_medicas": "🏥 Recomendaciones Médicas",
+  "acciones_inmediatas": "🚨 Acciones Inmediatas",
+  "examenes_adicionales": "🔬 Exámenes Adicionales Recomendados",
+  "seguimiento": "📅 Plan de Seguimiento",
+  
+  "navegacion": {
+    "titulo": "🧭 Navegación Principal",
+    "seleccionar": "Seleccionar Dashboard:",
+    "analisis_individual": "🔬 Análisis Individual",
+    "dashboard_eda": "📊 Dashboard EDA",
+    "comparacion_modelos": "🏆 Comparación Modelos"
+  },
+  
+  "eda": {
+    "titulo": "📊 Análisis Exploratorio de Datos (EDA) - COVID-19",
+    "configuracion": "⚙️ Configuración EDA",
+    "tamaño_dataset": "Tamaño del Dataset:",
+    "regenerar_dataset": "🔄 Regenerar Dataset",
+    "dataset_generado": "✅ Dataset generado exitosamente",
+    "resumen_ejecutivo": "📋 Resumen Ejecutivo",
+    "total_radiografias": "Total Radiografías",
+    "dataset_completo": "Dataset Completo",
+    "clase_dominante": "Clase Dominante",
+    "del_total": "del total",
+    "completitud_datos": "Completitud de Datos",
+    "sin_valores_faltantes": "Sin valores faltantes",
+    "edad_promedio": "Edad Promedio",
+    "años": "años",
+    "rango": "Rango",
+    "distribucion_clases": "🎯 Distribución de Clases Diagnósticas",
+    "estadisticas_clase": "📈 Estadísticas por Clase",
+    "metricas_clave": "🔑 Métricas Clave",
+    "clase_mas_comun": "Clase Más Común",
+    "clase_menos_comun": "Clase Menos Común",
+    "balance": "Balance Dataset",
+    "bien_balanceado": "Bien balanceado",
+    "desbalanceado": "Desbalanceado",
+    "estadisticos_descriptivos": "📊 Estadísticos Descriptivos",
+    "estadisticos_generales": "📈 Estadísticos Generales",
+    "estadisticos_por_clase": "🎯 Estadísticos por Clase Diagnóstica",
+    "distribucion_caracteristicas": "📊 Distribución de Características",
+    "calidad_datos": "✅ Calidad de Datos",
+    "valores_faltantes": "Valores Faltantes",
+    "filas_duplicadas": "Filas Duplicadas",
+    "tipos_datos": "Tipos de Datos",
+    "dominante": "dominante",
+    "mapa_calor": "🔥 Mapa de Calor - Correlaciones entre Características",
+    "correlaciones_significativas": "📈 Correlaciones Más Significativas",
+    "visualizaciones_avanzadas": "🎨 Visualizaciones Avanzadas",
+    "histogramas": "📊 Histogramas",
+    "box_plots": "📦 Box Plots",
+    "scatter_plots": "🎯 Scatter Plots",
+    "analisis_distribucion": "📊 Análisis de Distribución por Box Plots",
+    "analisis_multivariable": "🎯 Análisis Multivariable: Opacidad vs Contraste",
+    "insights_automaticos": "🤖 Insights Automáticos del Dataset",
+    "recomendaciones_modelado": "💡 Recomendaciones para Modelado",
+    "nota_requisitos": "📋 Nota: Este dashboard cumple con los requisitos 8 y 9 del proyecto"
+  },
+  
+  "comparacion": {
+    "titulo": "🏆 Comparación Robusta de Modelos COVID-19",
+    "configuracion": "⚙️ Configuración Comparación",
+    "modelos_comparar": "Modelos a Comparar:",
+    "tamaño_evaluacion": "Tamaño Dataset Evaluación:",
+    "ejecutar_comparacion": "🚀 Ejecutar Comparación Completa",
+    "comparacion_completada": "✅ Comparación completada exitosamente",
+    "ranking_global": "🏆 Ranking Global de Modelos",
+    "score_global": "Score Global",
+    "precision": "Accuracy",
+    "f1_score": "F1-Score",
+    "mcc": "MCC",
+    "auc": "AUC",
+    "mejor_modelo": "🏆 Mejor Modelo",
+    "score": "Score",
+    "accuracy_campeon": "📊 Accuracy Campeón",
+    "ventaja_segundo": "📈 Ventaja sobre 2do",
+    "puntos_diferencia": "puntos de diferencia",
+    "metricas_detalladas": "📊 Métricas Detalladas por Modelo",
+    "matthews_correlation": "Matthews Correlation",
+    "auc_macro": "AUC Macro",
+    "weighted": "Weighted",
+    "ponderado": "Ponderado",
+    "metricas_por_clase": "📋 Métricas por Clase",
+    "recall": "Recall",
+    "matrices_confusion": "📊 Matrices de Confusión Comparativas",
+    "seleccionar_matriz": "Seleccionar Modelo para Matriz Detallada:",
+    "interpretacion_matriz": "🔍 Interpretación de la Matriz",
+    "excelente_rendimiento": "Excelente rendimiento",
+    "rendimiento_moderado": "Rendimiento moderado",
+    "rendimiento_bajo": "Rendimiento bajo",
+    "recomendaciones": "💡 Recomendaciones",
+    "modelo_excelente": "🎯 Modelo con excelente rendimiento general",
+    "modelo_aceptable": "📈 Modelo con rendimiento aceptable, considerar mejoras",
+    "modelo_requiere": "🔧 Modelo requiere optimización significativa",
+    "curvas_roc": "📈 Curvas ROC Multiclase",
+    "seleccionar_roc": "Seleccionar Modelo para Curvas ROC:",
+    "valores_auc": "📊 Valores AUC por Clase",
+    "interpretacion": "Interpretación",
+    "excelente": "🌟 Excelente",
+    "bueno": "✅ Bueno",
+    "aceptable": "⚠️ Aceptable",
+    "pobre": "❌ Pobre",
+    "muy_pobre": "🚨 Muy pobre",
+    "tests_mcnemar": "🔬 Tests de McNemar - Comparación Estadística",
+    "mcnemar_descripcion": "El Test de McNemar determina si hay diferencias estadísticamente significativas entre el rendimiento de dos modelos en el mismo dataset.",
+    "comparacion": "Comparación",
+    "estadistico": "Estadístico",
+    "p_valor": "P-valor",
+    "significativo": "Significativo",
+    "si": "✅ Sí",
+    "no": "❌ No",
+    "resumen": "📊 Resumen",
+    "comparaciones_significativas": "comparaciones muestran diferencias estadísticamente significativas",
+    "interpretacion_mcnemar": "💡 Interpretación:",
+    "significativo_descripcion": "✅ Significativo (p < 0.05): Los modelos tienen rendimiento estadísticamente diferente",
+    "no_significativo_descripcion": "❌ No significativo (p ≥ 0.05): No hay evidencia de diferencia en rendimiento",
+    "recomendaciones_finales": "💡 Recomendaciones Finales y Conclusiones",
+    "modelo_recomendado": "🏆 Modelo Recomendado",
+    "es_mejor": "es el modelo con mejor rendimiento global",
+    "justificacion_tecnica": "📋 Justificación Técnica",
+    "recomendaciones_uso": "🎯 Recomendaciones de Uso",
+    "produccion": "🥇 Producción: Usar",
+    "para_casos_criticos": "para casos críticos de diagnóstico",
+    "backup": "🥈 Backup: Mantener",
+    "como_secundario": "como modelo secundario",
+    "ensemble": "🔄 Ensemble: Considerar combinación de los top 3 modelos para mayor robustez",
+    "monitoreo": "📊 Monitoreo: Implementar métricas de drift para detectar degradación del modelo",
+    "validacion": "🔍 Validación: Realizar validación adicional con datos reales antes de deployment",
+    "limitaciones": "⚠️ Limitaciones y Consideraciones",
+    "evaluacion_sintetica": "📊 Evaluación sintética: Resultados basados en datos simulados, validar con datos reales",
+    "contexto_clinico": "🏥 Contexto clínico: Considerar siempre el juicio médico profesional",
+    "actualizacion": "🔄 Actualización: Re-evaluar modelos periódicamente con nuevos datos",
+    "metricas_especificas": "📈 Métricas específicas: Priorizar recall para COVID-19 en contextos de screening",
+    "uso_especifico": "🎯 Uso específico: Adaptar selección de modelo según caso de uso específico",
+    "alta_accuracy": "✅ Alta accuracy general",
+    "excelente_balance": "✅ Excelente balance de clases (MCC)",
+    "buena_discriminacion": "✅ Buena discriminación (AUC)",
+    "ventaja_clara": "✅ Ventaja clara (+{diferencia:.1f}%)",
+    "rendimiento_moderado_but": "⚠️ Rendimiento moderado pero mejor disponible",
+    "nota_requisitos": "📋 Nota: Esta comparación cumple con los requisitos 10, 11 y 12 del proyecto"
+  },
+  
+  "sistema_deteccion": "🦠 Sistema de Detección COVID-19 con IA",
+  "desarrollado_con": "Desarrollado con TensorFlow, Streamlit y 6 Modelos de Deep Learning",
+  "advertencia_medica": "⚠️ Solo para fines educativos - No reemplaza diagnóstico médico profesional",
+  
+  "modelos_disponibles": {
+    "Custom_CNN": "🏆 Campeón",
+    "MobileNetV2": "🥈 Segundo",
+    "Ensemble": "🎯 Ensemble",
+    "EfficientNet": "📊 EfficientNet",
+    "CNN_XGBoost": "🔗 Híbrido XGB",
+    "CNN_RandomForest": "🌳 Híbrido RF"
+  },
+  
+  "recomendaciones": {
+    "covid19_alta_confianza": {
+      "acciones_inmediatas": [
+        "Aislar al paciente inmediatamente",
+        "Contactar al médico tratante",
+        "Realizar PCR para confirmación",
+        "Notificar a autoridades sanitarias"
+      ],
+      "examenes_adicionales": [
+        "RT-PCR para SARS-CoV-2",
+        "Análisis de sangre completo",
+        "Dímero D y marcadores inflamatorios",
+        "Gasometría arterial si hay disnea"
+      ],
+      "seguimiento": [
+        "Monitoreo diario de síntomas",
+        "Control de saturación de oxígeno",
+        "Seguimiento médico cada 48-72 horas",
+        "Evaluación para hospitalización si empeora"
+      ],
+      "recomendaciones": [
+        "🚨 RESULTADO DE ALTA CONFIANZA: Se recomienda aislamiento inmediato y confirmación con RT-PCR",
+        "⚠️ Este resultado requiere validación médica profesional urgente",
+        "📞 Contactar servicios de salud para protocolo COVID-19"
+      ]
+    },
+    "covid19_baja_confianza": {
+      "acciones_inmediatas": [
+        "Mantener precauciones estándar",
+        "Consultar con médico especialista",
+        "Realizar pruebas confirmatorias",
+        "Monitorear evolución de síntomas"
+      ],
+      "examenes_adicionales": [
+        "RT-PCR para descartar COVID-19",
+        "Radiografía de seguimiento en 48-72h",
+        "Hemograma completo",
+        "Marcadores de infección"
+      ],
+      "seguimiento": [
+        "Observación clínica estrecha",
+        "Repetir estudios si síntomas persisten",
+        "Control médico en 24-48 horas"
+      ],
+      "recomendaciones": [
+        "⚠️ RESULTADO INCIERTO: Se requiere evaluación médica adicional",
+        "🔬 Realizar pruebas confirmatorias para diagnóstico definitivo",
+        "📋 Mantener seguimiento clínico estrecho"
+      ]
+    },
+    "normal": {
+      "acciones_inmediatas": [
+        "Continuar cuidados preventivos rutinarios",
+        "Mantener medidas de higiene estándar"
+      ],
+      "examenes_adicionales": [
+        "Control médico de rutina según indicación",
+        "Evaluación clínica si aparecen síntomas"
+      ],
+      "seguimiento": [
+        "Controles médicos regulares",
+        "Mantener estilo de vida saludable"
+      ],
+      "recomendaciones": [
+        "✅ RADIOGRAFÍA NORMAL: No se observan signos patológicos evidentes",
+        "💚 Mantener medidas preventivas y controles médicos regulares",
+        "⚠️ Consultar médico si desarrolla síntomas respiratorios"
+      ]
+    },
+    "opacidad_pulmonar": {
+      "acciones_inmediatas": [
+        "Evaluación médica especializada",
+        "Estudios adicionales para diagnóstico diferencial",
+        "Monitoreo de función respiratoria"
+      ],
+      "examenes_adicionales": [
+        "TAC de tórax de alta resolución",
+        "Pruebas de función pulmonar",
+        "Cultivos y estudios microbiológicos",
+        "Marcadores tumorales si está indicado"
+      ],
+      "seguimiento": [
+        "Control radiológico en 2-4 semanas",
+        "Evaluación por neumólogo",
+        "Monitoreo de síntomas respiratorios"
+      ],
+      "recomendaciones": [
+        "🔍 OPACIDAD DETECTADA: Requiere evaluación especializada para diagnóstico diferencial",
+        "🏥 Se recomienda derivación a neumología para estudios complementarios",
+        "📊 Realizar seguimiento radiológico para evaluar evolución"
+      ]
+    },
+    "neumonia_viral": {
+      "acciones_inmediatas": [
+        "Evaluación médica urgente",
+        "Considerar manejo hospitalario",
+        "Estudios para identificar agente causal",
+        "Medidas de aislamiento apropiadas"
+      ],
+      "examenes_adicionales": [
+        "Panel viral respiratorio completo",
+        "Hemocultivos y urocultivo",
+        "Procalcitonina y PCR",
+        "Gasometría arterial"
+      ],
+      "seguimiento": [
+        "Monitoreo hospitalario si está indicado",
+        "Control radiológico en 48-72 horas",
+        "Evaluación de respuesta al tratamiento"
+      ],
+      "recomendaciones": [
+        "🦠 NEUMONÍA VIRAL DETECTADA: Requiere atención médica inmediata",
+        "🏥 Evaluar necesidad de hospitalización según severidad",
+        "💊 Iniciar tratamiento antiviral específico según protocolo médico"
+      ]
+    }
+  },
+  
+  "reportes": {
+    "generado_el": "Generado el",
+    "idioma": "Idioma",
+    "sistema": "Sistema",
+    "disclaimer_titulo": "⚠️ ADVERTENCIA MÉDICA IMPORTANTE",
+    "disclaimer_contenido": "Este reporte es generado por un sistema de inteligencia artificial con fines educativos y de investigación. NO debe ser utilizado como única base para decisiones médicas. Siempre consulte con un profesional médico calificado para diagnóstico y tratamiento.",
+    "proyecto_academico": "Proyecto académico - Sistema COVID-19 IA",
+    "no_uso_clinico": "No autorizado para uso clínico directo",
+    
+    "analisis_individual": {
+      "titulo": "🔬 Reporte de Análisis Individual de Radiografía",
+      "subtitulo": "Análisis automatizado con Inteligencia Artificial"
+    },
+    
+    "eda": {
+      "titulo": "📊 Reporte de Análisis Exploratorio de Datos",
+      "subtitulo": "Análisis estadístico completo del dataset COVID-19",
+      "resumen_dataset": "📋 Resumen del Dataset",
+      "distribucion_clases": "🎯 Distribución por Clase Diagnóstica",
+      "estadisticas_descriptivas": "📊 Estadísticas Descriptivas",
+      "insights_principales": "💡 Insights Principales del Análisis",
+      "recomendaciones_modelado": "🎯 Recomendaciones para Modelado",
+      "recomendacion_1": "Considerar validación cruzada estratificada debido a múltiples clases",
+      "recomendacion_2": "Evaluar feature engineering basado en las correlaciones encontradas",
+      "recomendacion_3": "Implementar data augmentation si el dataset es limitado",
+      "recomendacion_4": "Usar métricas balanceadas (F1-score, AUC) para evaluación"
+    },
+    
+    "comparacion": {
+      "titulo": "🏆 Reporte de Comparación Robusta de Modelos",
+      "subtitulo": "Evaluación estadística completa de modelos COVID-19",
+      "ranking_modelos": "🏆 Ranking Global de Modelos",
+      "analisis_estadistico": "📊 Análisis Estadístico",
+      "recomendaciones_finales": "💡 Recomendaciones Finales",
+      "limitaciones": "⚠️ Limitaciones del Estudio"
+    },
+    
+    "resumen_ejecutivo": "📋 Resumen Ejecutivo",
+    "modelo_utilizado": "🤖 Modelo Utilizado",
+    "diagnostico_predicho": "🎯 Diagnóstico Predicho",
+    "nivel_confianza": "📊 Nivel de Confianza",
+    "fecha_analisis": "📅 Fecha de Análisis",
+    "interpretacion_resultado": "🔍 Interpretación del Resultado",
+    "covid_detectado": "COVID-19 DETECTADO",
+    "covid_interpretacion": "Se han identificado patrones radiológicos compatibles con COVID-19. Se recomienda aislamiento inmediato y confirmación mediante RT-PCR.",
+    "radiografia_normal": "RADIOGRAFÍA NORMAL",
+    "normal_interpretacion": "No se observan hallazgos patológicos significativos en la radiografía analizada.",
+    "anomalia_detectada": "ANOMALÍA DETECTADA",
+    "anomalia_interpretacion": "Se han identificado hallazgos que requieren evaluación médica especializada adicional.",
+    "probabilidades_detalladas": "📊 Probabilidades Detalladas por Clase",
+    "clase": "Clase Diagnóstica",
+    "probabilidad": "Probabilidad (%)",
+    "recomendaciones_medicas": "🏥 Recomendaciones Médicas",
+    "limitaciones": "⚠️ Limitaciones y Consideraciones",
+    "limitacion_ia": "Este análisis está basado en inteligencia artificial y puede tener errores",
+    "limitacion_contexto": "No considera el contexto clínico completo del paciente",
+    "limitacion_validacion": "Requiere validación con pruebas diagnósticas adicionales",
+    "limitacion_especialista": "Debe ser interpretado por un especialista médico",
+    
+    "total_imagenes": "📊 Total de Imágenes",
+    "total_clases": "🎯 Clases Diagnósticas",
+    "clase_dominante": "👑 Clase Dominante",
+    "periodo_analisis": "📅 Período de Análisis",
+    "cantidad": "Cantidad",
+    "porcentaje": "Porcentaje (%)",
+    "variable": "Variable",
+    "media": "Media",
+    "std": "Desv. Estándar",
+    "min": "Mínimo",
+    "max": "Máximo",
+    
+    "mejor_modelo": "🏆 Mejor Modelo",
+    "posicion": "Posición",
+    "modelo": "Modelo",
+    "score_global": "Score Global",
+    "accuracy": "Accuracy",
+    "f1_score": "F1-Score",
+    "mcc": "MCC",
+    "tests_realizados": "🧪 Tests Realizados",
+    "diferencias_significativas": "📊 Diferencias Significativas",
+    "criterio_significancia": "📏 Criterio de Significancia",
+    "test_mcnemar": "Test de McNemar",
+    "recomendacion_produccion": "🥇 Producción: Usar",
+    "recomendacion_backup": "🥈 Backup: Mantener",
+    "recomendacion_ensemble": "🔄 Ensemble: Considerar combinación de los mejores modelos",
+    "recomendacion_monitoreo": "📊 Monitoreo: Implementar seguimiento de rendimiento",
+    "recomendacion_validacion": "🔍 Validación: Validar con datos reales antes de producción",
+    "limitacion_datos_sinteticos": "📊 Evaluación basada en datos sintéticos",
+    "limitacion_evaluacion_laboratorio": "🧪 Evaluación en ambiente controlado",
+    "limitacion_contexto_clinico": "🏥 No considera contexto clínico completo",
+    "limitacion_validacion_externa": "📋 Requiere validación externa con datos reales",
+    
+    "insights": {
+      "dataset_balanceado": "✅ Dataset bien balanceado entre clases diagnósticas",
+      "dataset_moderadamente_desbalanceado": "⚠️ Dataset moderadamente desbalanceado, considerar técnicas de balanceo",
+      "dataset_muy_desbalanceado": "🚨 Dataset muy desbalanceado, requiere estrategias especiales de entrenamiento",
+      "datos_completos": "✨ Datos perfectos: Sin valores faltantes en el dataset",
+      "buena_calidad": "✅ Buena calidad de datos",
+      "requiere_limpieza": "⚠️ Atención requerida: requiere limpieza de datos",
+      "amplio_rango_etario": "👥 Amplio rango etario en el dataset",
+      "rango_etario_limitado": "👤 Rango etario limitado en el dataset"
+    },
+    
+    "recomendaciones": {
+      "covid_alta_confianza_1": "Aislar al paciente inmediatamente según protocolos COVID-19",
+      "covid_alta_confianza_2": "Realizar RT-PCR para confirmación diagnóstica urgente",
+      "covid_alta_confianza_3": "Contactar al médico tratante para evaluación clínica",
+      "covid_alta_confianza_4": "Notificar a autoridades sanitarias según normativa local",
+      "covid_baja_confianza_1": "Mantener precauciones estándar hasta confirmación",
+      "covid_baja_confianza_2": "Realizar pruebas confirmatorias adicionales",
+      "covid_baja_confianza_3": "Consultar con especialista para segunda opinión",
+      "normal_1": "Continuar con cuidados preventivos de rutina",
+      "normal_2": "Mantener controles médicos regulares según indicación",
+      "normal_3": "Consultar médico si desarrolla síntomas respiratorios",
+      "anomalia_1": "Realizar evaluación médica especializada",
+      "anomalia_2": "Solicitar estudios complementarios según criterio médico",
+      "anomalia_3": "Implementar seguimiento radiológico apropiado",
+      "anomalia_4": "Considerar derivación a especialista según hallazgos"
+    },
+    
+    "descargar_pdf": "📄 Descargar Reporte PDF",
+    "generando_reporte": "📄 Generando reporte PDF...",
+    "reporte_generado": "✅ Reporte PDF generado exitosamente",
+    "error_generacion": "❌ Error generando reporte PDF"
+  }
+}
