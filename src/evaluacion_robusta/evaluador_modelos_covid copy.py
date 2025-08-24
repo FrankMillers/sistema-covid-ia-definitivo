@@ -1,7 +1,7 @@
 """
 Módulo de Evaluación Robusta para Modelos COVID-19
 Autor: Sistema IA COVID-19
-Descripción: Evaluación estadística completa con métricas avanzadas - VERSIÓN MEJORADA
+Descripción: Evaluación estadística completa con métricas avanzadas
 """
 
 import numpy as np
@@ -139,7 +139,7 @@ class EvaluadorModelosCovid:
     
     def simular_predicciones_modelo(self, modelo_nombre: str, etiquetas_verdaderas: np.ndarray) -> Tuple[np.ndarray, np.ndarray]:
         """
-        Simula predicciones realistas para cada modelo - VERSIÓN MEJORADA
+        Simula predicciones realistas para cada modelo basadas en su rendimiento conocido
         
         Args:
             modelo_nombre (str): Nombre del modelo
@@ -148,73 +148,16 @@ class EvaluadorModelosCovid:
         Returns:
             Tuple[np.ndarray, np.ndarray]: Predicciones y probabilidades
         """
-        # Seed único y consistente por modelo
-        import hashlib
-        modelo_seed = int(hashlib.md5(modelo_nombre.encode()).hexdigest()[:8], 16) % (2**31)
-        np.random.seed(modelo_seed)
+        np.random.seed(hash(modelo_nombre) % 2**32)  # Seed único por modelo
         
-        # Rendimiento realista y diferenciado por modelo
+        # Definir rendimiento específico por modelo
         rendimientos = {
-            'Custom_CNN': {
-                'base_accuracy': 0.8744,
-                'std_accuracy': 0.05,
-                'confusion_matrix': {
-                    'COVID-19': {'precision': 0.88, 'recall': 0.85},
-                    'Normal': {'precision': 0.91, 'recall': 0.93},
-                    'Opacidad Pulmonar': {'precision': 0.82, 'recall': 0.80},
-                    'Neumonía Viral': {'precision': 0.85, 'recall': 0.87}
-                }
-            },
-            'MobileNetV2': {
-                'base_accuracy': 0.8396,
-                'std_accuracy': 0.06,
-                'confusion_matrix': {
-                    'COVID-19': {'precision': 0.84, 'recall': 0.81},
-                    'Normal': {'precision': 0.89, 'recall': 0.91},
-                    'Opacidad Pulmonar': {'precision': 0.78, 'recall': 0.76},
-                    'Neumonía Viral': {'precision': 0.82, 'recall': 0.84}
-                }
-            },
-            'Ensemble': {
-                'base_accuracy': 0.8623,
-                'std_accuracy': 0.045,
-                'confusion_matrix': {
-                    'COVID-19': {'precision': 0.86, 'recall': 0.84},
-                    'Normal': {'precision': 0.90, 'recall': 0.92},
-                    'Opacidad Pulmonar': {'precision': 0.81, 'recall': 0.79},
-                    'Neumonía Viral': {'precision': 0.84, 'recall': 0.86}
-                }
-            },
-            'EfficientNet': {
-                'base_accuracy': 0.8215,
-                'std_accuracy': 0.07,
-                'confusion_matrix': {
-                    'COVID-19': {'precision': 0.82, 'recall': 0.79},
-                    'Normal': {'precision': 0.87, 'recall': 0.89},
-                    'Opacidad Pulmonar': {'precision': 0.76, 'recall': 0.74},
-                    'Neumonía Viral': {'precision': 0.80, 'recall': 0.82}
-                }
-            },
-            'CNN_XGBoost': {
-                'base_accuracy': 0.7984,
-                'std_accuracy': 0.08,
-                'confusion_matrix': {
-                    'COVID-19': {'precision': 0.80, 'recall': 0.77},
-                    'Normal': {'precision': 0.85, 'recall': 0.87},
-                    'Opacidad Pulmonar': {'precision': 0.74, 'recall': 0.72},
-                    'Neumonía Viral': {'precision': 0.78, 'recall': 0.80}
-                }
-            },
-            'CNN_RandomForest': {
-                'base_accuracy': 0.7892,
-                'std_accuracy': 0.09,
-                'confusion_matrix': {
-                    'COVID-19': {'precision': 0.78, 'recall': 0.75},
-                    'Normal': {'precision': 0.84, 'recall': 0.86},
-                    'Opacidad Pulmonar': {'precision': 0.72, 'recall': 0.70},
-                    'Neumonía Viral': {'precision': 0.76, 'recall': 0.78}
-                }
-            }
+            'Custom_CNN': {'accuracy': 0.8744, 'precision_covid': 0.82, 'recall_covid': 0.85},
+            'MobileNetV2': {'accuracy': 0.8396, 'precision_covid': 0.78, 'recall_covid': 0.81},
+            'Ensemble': {'accuracy': 0.8623, 'precision_covid': 0.80, 'recall_covid': 0.84},
+            'EfficientNet': {'accuracy': 0.8215, 'precision_covid': 0.76, 'recall_covid': 0.79},
+            'CNN_XGBoost': {'accuracy': 0.7984, 'precision_covid': 0.74, 'recall_covid': 0.77},
+            'CNN_RandomForest': {'accuracy': 0.7892, 'precision_covid': 0.72, 'recall_covid': 0.75}
         }
         
         modelo_perf = rendimientos.get(modelo_nombre, rendimientos['Custom_CNN'])
@@ -222,59 +165,26 @@ class EvaluadorModelosCovid:
         n_muestras = len(etiquetas_verdaderas)
         n_clases = len(self.clases)
         
-        predicciones = []
-        probabilidades = []
+        # Generar probabilidades base
+        probabilidades = np.random.dirichlet([1, 1, 1, 1], n_muestras)
         
-        # Generar predicciones más realistas con variabilidad
+        # Ajustar probabilidades según el rendimiento del modelo
         for i, etiqueta_real in enumerate(etiquetas_verdaderas):
-            clase_real_nombre = self.clases[etiqueta_real]
+            # Aumentar probabilidad de la clase correcta según accuracy del modelo
+            factor_confianza = modelo_perf['accuracy'] + np.random.normal(0, 0.1)
+            factor_confianza = np.clip(factor_confianza, 0.5, 0.95)
             
-            # Obtener métricas específicas para esta clase
-            metricas_clase = modelo_perf['confusion_matrix'].get(
-                clase_real_nombre, 
-                {'precision': modelo_perf['base_accuracy'], 'recall': modelo_perf['base_accuracy']}
-            )
+            # Hacer que la clase correcta tenga mayor probabilidad
+            probabilidades[i] *= (1 - factor_confianza)
+            probabilidades[i][etiqueta_real] = factor_confianza
             
-            # Probabilidad de recall (detectar correctamente esta clase)
-            prob_recall = metricas_clase['recall'] + np.random.normal(0, modelo_perf['std_accuracy'])
-            prob_recall = np.clip(prob_recall, 0.3, 0.98)
-            
-            # Decidir si detecta correctamente la clase
-            if np.random.random() < prob_recall:
-                # ACIERTO: La clase real tiene la mayor probabilidad
-                prediccion = etiqueta_real
-                
-                # Generar probabilidades con la clase correcta dominante
-                base_probs = np.random.dirichlet([1, 1, 1, 1])  # Base aleatoria
-                base_probs = base_probs * 0.3  # Reducir todas
-                
-                # Clase correcta tiene alta probabilidad
-                prob_correcta = 0.6 + np.random.uniform(0, 0.35)
-                base_probs[etiqueta_real] = prob_correcta
-                
-            else:
-                # ERROR: Confunde con otra clase
-                # Generar confusión realista (clases similares tienen más prob de confusión)
-                prob_confusion = np.random.dirichlet([1, 1, 1, 1])
-                
-                # Reducir probabilidad de la clase correcta
-                prob_confusion[etiqueta_real] = prob_confusion[etiqueta_real] * 0.4
-                
-                # Normalizar
-                prob_confusion = prob_confusion / prob_confusion.sum()
-                
-                # La predicción es la clase con mayor probabilidad (que no es la correcta)
-                prediccion = np.argmax(prob_confusion)
-                base_probs = prob_confusion
-            
-            # Normalizar y asegurar rango válido
-            base_probs = np.clip(base_probs, 0.01, 0.98)
-            base_probs = base_probs / base_probs.sum()
-            
-            predicciones.append(prediccion)
-            probabilidades.append(base_probs)
+            # Renormalizar
+            probabilidades[i] /= probabilidades[i].sum()
         
-        return np.array(predicciones), np.array(probabilidades)
+        # Obtener predicciones (clase con mayor probabilidad)
+        predicciones = np.argmax(probabilidades, axis=1)
+        
+        return predicciones, probabilidades
     
     def calcular_metricas_basicas(self, y_true: np.ndarray, y_pred: np.ndarray, y_proba: np.ndarray) -> Dict[str, float]:
         """
