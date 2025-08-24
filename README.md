@@ -76,7 +76,7 @@ pip install -r requirements.txt
 ```bash
 streamlit run app.py
 ```
-
+🎉 **¡La aplicación estará disponible en https://sistema-covid-ia-definitivo-iynxxsgn6b47hhacfappgoh.streamlit.app**
 🎉 **¡La aplicación estará disponible en http://localhost:8501!**
 
 ## 📖 **Instalación Completa**
